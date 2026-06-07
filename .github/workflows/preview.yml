@@ -1,0 +1,66 @@
+name: Deploy PR Preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+# Cancel old builds if new commits are pushed to the same PR
+concurrency:
+  group: pr-preview-${{ github.event.number }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    
+    # We need specific permissions for GitHub Pages and commenting on PRs
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install Dependencies
+        if: github.event.action != 'closed'
+        run: npm ci
+
+      - name: Configure Hexo For PR Preview
+        if: github.event.action != 'closed'
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          REPO_NAME_LC="$(printf '%s' "$REPO_NAME" | tr '[:upper:]' '[:lower:]')"
+          OWNER_LC="$(printf '%s' "$GITHUB_REPOSITORY_OWNER" | tr '[:upper:]' '[:lower:]')"
+          if [ "$REPO_NAME_LC" = "${OWNER_LC}.github.io" ]; then
+            SITE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/pr-preview/pr-${{ github.event.number }}"
+            SITE_ROOT="/pr-preview/pr-${{ github.event.number }}/"
+          else
+            SITE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${REPO_NAME}/pr-preview/pr-${{ github.event.number }}"
+            SITE_ROOT="/${REPO_NAME}/pr-preview/pr-${{ github.event.number }}/"
+          fi
+          printf "url: %s\nroot: %s\n" "$SITE_URL" "$SITE_ROOT" > _config.github-pages.yml
+
+      - name: Build Hexo Site
+        if: github.event.action != 'closed'
+        run: npm run build:css && npx hexo generate --config _config.yml,_config.github-pages.yml
+
+      # This action takes the 'public' folder and deploys it to a special gh-pages preview branch
+      # It also automatically comments on your PR with the temporary URL
+      - name: Deploy Preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./public/
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          wait-for-pages-deployment: true

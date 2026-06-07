@@ -1,0 +1,56 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Configure Hexo For GitHub Pages
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          REPO_NAME_LC="$(printf '%s' "$REPO_NAME" | tr '[:upper:]' '[:lower:]')"
+          OWNER_LC="$(printf '%s' "$GITHUB_REPOSITORY_OWNER" | tr '[:upper:]' '[:lower:]')"
+          if [ "$REPO_NAME_LC" = "${OWNER_LC}.github.io" ]; then
+            SITE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io"
+            SITE_ROOT="/"
+          else
+            SITE_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${REPO_NAME}"
+            SITE_ROOT="/${REPO_NAME}/"
+          fi
+          printf "url: %s\nroot: %s\n" "$SITE_URL" "$SITE_ROOT" > _config.github-pages.yml
+
+      - name: Build Hexo Site
+        run: npm run build:css && npx hexo generate --config _config.yml,_config.github-pages.yml
+
+      - name: Deploy To GitHub Pages Branch
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: public
+          clean-exclude: pr-preview
+          force: false
