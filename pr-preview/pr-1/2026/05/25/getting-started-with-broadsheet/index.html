@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <meta name="generator" content="Hexo">
+  
+  <title>Broadsheet Setup Guide | Broadsheet</title>
+  
+    <meta name="keywords" content="demo, blog, hexo">
+  
+  <meta name="author" content="John Doe">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://Lame-Fortuna.github.io/AIBlogg/pr-preview/pr-1/AIBlogg/pr-preview/pr-1/2026/05/25/getting-started-with-broadsheet/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="description" content="A complete guide to setting up and using the Broadsheet Hexo blog theme, from installation to deployment.">
+  
+    <link rel="shortcut icon" href="/AIBlogg/pr-preview/pr-1/favicon.ico">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Broadsheet Setup Guide | Broadsheet">
+  <meta property="og:url" content="https://Lame-Fortuna.github.io/AIBlogg/pr-preview/pr-1/AIBlogg/pr-preview/pr-1/2026/05/25/getting-started-with-broadsheet/">
+  <meta property="og:site_name" content="Broadsheet">
+  <meta property="og:description" content="A complete guide to setting up and using the Broadsheet Hexo blog theme, from installation to deployment.">
+  
+  
+    <meta property="article:published_time" content="2026-05-25T12:00:00.000Z">
+  
+  
+    <meta property="article:modified_time" content="2026-06-07T01:46:30.909Z">
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Broadsheet Setup Guide | Broadsheet">
+  <meta name="twitter:description" content="A complete guide to setting up and using the Broadsheet Hexo blog theme, from installation to deployment.">
+  
+  
+  
+  
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Broadsheet Setup Guide","description":"A complete guide to setting up and using the Broadsheet Hexo blog theme, from installation to deployment.","datePublished":"2026-05-25T12:00:00.000Z","dateModified":"2026-06-07T01:46:30.909Z","author":{"@type":"Person","name":"John Doe"},"publisher":{"@type":"Organization","name":"Broadsheet"},"mainEntityOfPage":"https://Lame-Fortuna.github.io/AIBlogg/pr-preview/pr-1/AIBlogg/pr-preview/pr-1/2026/05/25/getting-started-with-broadsheet/"}</script>
+
+  
+<link rel="stylesheet" href="/AIBlogg/pr-preview/pr-1/css/generated.css">
+
+</head>
+
+<body class="text-black antialiased">
+  <div class="site-shell min-h-screen">
+    
+
+<header class="mb-8">
+  <div class="mx-[1.5vw] border-b-2 border-black">
+    <div class="flex flex-col pt-6">
+
+      <!-- Navbar -->
+      <div class="site-navbar fixed left-[1.5vw] right-[1.5vw] top-0 z-50 flex flex-nowrap items-center justify-between gap-2 border-b-2 border-black px-3 py-2 sm:gap-4 sm:px-4">
+        <div class="flex min-w-0 shrink flex-nowrap items-center gap-x-3 gap-y-2 sm:gap-x-5">
+          
+            <nav class="flex flex-nowrap items-center gap-x-3 gap-y-2 sm:gap-x-4" aria-label="Primary">
+              
+                <a href="/AIBlogg/pr-preview/pr-1/" class="text-xs font-bold uppercase tracking-widest text-black hover:underline decoration-2 underline-offset-4">Home</a>
+              
+                <a href="/AIBlogg/pr-preview/pr-1/archives/" class="text-xs font-bold uppercase tracking-widest text-black hover:underline decoration-2 underline-offset-4">Archives</a>
+              
+            </nav>
+          
+        </div>
+
+        <div class="flex shrink-0 items-center gap-3">
+          <form class="group/search relative flex h-9 w-9 shrink-0 items-center justify-end overflow-visible transition-[width] duration-200 ease-out focus-within:w-[min(12rem,46vw)] hover:w-[min(12rem,46vw)] sm:focus-within:w-[min(18rem,72vw)] sm:hover:w-[min(18rem,72vw)]" data-site-search>
+            <label for="site-search" class="sr-only">Search posts</label>
+            <input
+              id="site-search"
+              type="search"
+              name="q"
+              autocomplete="off"
+              placeholder="Search"
+              class="h-9 w-full border-0 bg-transparent py-2 pl-9 pr-3 text-sm text-black opacity-0 outline-none ring-0 transition-opacity placeholder:text-black/50 focus:border-0 focus:outline-none focus:ring-0 group-focus-within/search:opacity-100 group-hover/search:opacity-100"
+              data-site-search-input
+            >
+            <span class="pointer-events-none absolute bottom-1 left-9 right-3 h-px bg-black opacity-0 transition-opacity group-focus-within/search:opacity-100 group-hover/search:opacity-100" aria-hidden="true"></span>
+            <button type="submit" class="absolute left-0 top-0 flex h-9 w-9 items-center justify-center text-black transition-colors hover:bg-black hover:text-paper" aria-label="Search">
+              <svg class="h-4 w-4" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+                <path d="m21 21-4.3-4.3m1.3-5.2a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <div class="absolute right-0 top-full z-50 mt-2 hidden w-[min(16rem,88vw)] border-2 border-black/50 bg-stone-100 text-black shadow-sm sm:w-[min(18rem,72vw)]" data-site-search-results></div>
+          </form>
+          <p class="hidden text-xs font-bold uppercase tracking-widest text-black sm:block">
+            Sunday, June 7, 2026
+          </p>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <div class="mt-10 overflow-visible text-center sm:mt-12">
+        <a href="/AIBlogg/pr-preview/pr-1/" class="inline-block">
+          <span class="block break-words text-6xl md:text-7xl lg:text-8xl leading-[0.9] text-black" style="font-family: 'Manufacturing Consent', Georgia, serif;">
+            Broadsheet
+          </span>
+        </a>
+      </div>
+
+      <!-- Description Banner -->
+      <div class="py-2">
+        <p class="text-center text-sm uppercase tracking-[0.25em] text-black/80 max-w-5xl mx-auto leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const posts = [{"title":"A New Era of Music Is Here","url":"/AIBlogg/pr-preview/pr-1/2026/05/26/a-new-era-of-music-is-here/","summary":"That magic horn that pours forth music, jazz, lectures, market reports and educational..."},{"title":"Broadsheet Setup Guide","url":"/AIBlogg/pr-preview/pr-1/2026/05/25/getting-started-with-broadsheet/","summary":"A complete guide to setting up and using the Broadsheet Hexo blog theme, from..."},{"title":"Broadsheet Pattern Guide","url":"/AIBlogg/pr-preview/pr-1/2026/05/24/understanding-broadsheet-blog-patterns/","summary":"A practical listicle guide to the post layout patterns included with the Broadsheet Hexo..."},{"title":"Two Wheels Over Four","url":"/AIBlogg/pr-preview/pr-1/2026/05/23/two-wheels-over-four/","summary":"Many cities today are plagued by traffic congestion and, in densely populated areas, the..."},{"title":"Three Buildings","url":"/AIBlogg/pr-preview/pr-1/2026/05/22/three-building-styles-in-concrete-and-stone/","summary":"A short architecture demo with sourced notes, one wide image, and two split-image..."},{"title":"Insectes by Emile-Allain Seguy","url":"/AIBlogg/pr-preview/pr-1/2026/05/21/emile-allain-seguy-insectes-plates/","summary":"A compact image-led demo post featuring insect plates by Emile-Allain Seguy from the 1929..."}];
+      const form = document.querySelector('[data-site-search]');
+      if (!form) return;
+
+      const input = form.querySelector('[data-site-search-input]');
+      const results = form.querySelector('[data-site-search-results]');
+
+      const closeResults = () => {
+        results.classList.add('hidden');
+        results.innerHTML = '';
+      };
+
+      const renderResults = () => {
+        const query = input.value.trim().toLowerCase();
+        if (!query) {
+          closeResults();
+          return;
+        }
+
+        const matches = posts
+          .filter((post) => `${post.title} ${post.summary}`.toLowerCase().includes(query))
+          .slice(0, 5);
+
+        if (!matches.length) {
+          results.innerHTML = '<p class="px-3 py-2 text-xs font-bold uppercase tracking-widest text-black/60">No matches</p>';
+          results.classList.remove('hidden');
+          return;
+        }
+
+        results.innerHTML = matches.map((post) => `
+          <a href="${post.url}" class="block border-b border-black px-3 py-2 last:border-b-0 hover:bg-black hover:text-paper">
+            <span class="block text-sm font-bold leading-snug">${post.title}</span>
+            <span class="mt-1 block text-xs leading-5 opacity-75">${post.summary}</span>
+          </a>
+        `).join('');
+        results.classList.remove('hidden');
+      };
+
+      input.addEventListener('input', renderResults);
+      document.addEventListener('click', (event) => {
+        if (!form.contains(event.target)) closeResults();
+      });
+      form.addEventListener('submit', (event) => {
+        const firstMatch = results.querySelector('a');
+        if (!input.value.trim()) {
+          event.preventDefault();
+          input.focus();
+        } else if (firstMatch) {
+          event.preventDefault();
+          window.location.href = firstMatch.href;
+        }
+      });
+    })();
+  </script>
+</header>
+
+    <main class="mx-[1.5vw] pb-20">
+      
+
+<section class="mt-8 space-y-8">
+  <article class="overflow-hidden px-4 sm:px-6 lg:px-10 xl:px-12">
+    <div class="border-b border-black px-6 py-6 sm:px-8 xl:px-10">
+      <div class="grid gap-8 xl:grid-cols-[minmax(0,1.8fr)_minmax(18rem,0.95fr)] xl:items-start">
+        <div>
+          <p class="text-[0.72rem] font-bold uppercase tracking-[0.15em]">Article</p>
+          <h1 class="mt-4 font-serif text-4xl md:text-5xl leading-[0.9]">Broadsheet Setup Guide</h1>
+          <div class="mt-5">
+            
+
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-black/62">
+  <span>25 May 2026</span>
+  <span>John Doe</span>
+  
+    <span>guides</span>
+  
+</div>
+
+          </div>
+          
+            <div class="mt-6 max-w-4xl text-base leading-8 text-black/80 sm:text-lg">
+              <p>A complete guide to setting up and using the Broadsheet Hexo blog theme, from installation to deployment.</p>
+            </div>
+          
+        </div>
+
+        <div class="bg-black text-paper p-6">
+          <p class="text-[0.72rem] font-bold uppercase tracking-[0.15em]">Pattern</p>
+          <p class="mt-4 font-serif text-3xl text-white leading-tight">Freeform</p>
+          <p class="mt-4 text-sm leading-7">
+            This post uses a fixed layout pattern so structure stays intentional instead of drifting back into a generic blog format.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="article-body pattern-freeform px-6 py-8 sm:px-8 xl:px-10">
+      <p>Welcome to Broadsheet, a custom Hexo theme designed for thoughtful blogging. This guide will walk you through everything you need to get started, from initial setup to publishing your first posts.</p>
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><p>Before diving in, make sure you have the right tools:</p>
+<ul>
+<li><strong>Node.js 20+</strong>: Broadsheet requires a modern Node.js version. You can download it from <a target="_blank" rel="noopener" href="https://nodejs.org/">nodejs.org</a>.</li>
+<li><strong>npm</strong>: This comes bundled with Node.js, so you’re all set.</li>
+<li><strong>Git</strong>: Optional but recommended for version control and deployment.</li>
+</ul>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Start by cloning or downloading the Broadsheet project. If you’re reading this, you probably already have it set up, but here’s the process:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Clone the repository (if available)</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repository-url&gt; my-blog</span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># Or download and extract the zip file</span></span><br><span class="line"><span class="comment"># Then navigate to the project directory</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install dependencies</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>This will install Hexo and all the necessary packages defined in <code>package.json</code>.</p>
+<h2 id="Project-Structure"><a href="#Project-Structure" class="headerlink" title="Project Structure"></a>Project Structure</h2><p>Once installed, your project should look like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml              # Site configuration</span><br><span class="line">├── package.json             # Node.js dependencies</span><br><span class="line">├── source/</span><br><span class="line">│   └── _posts/              # Your blog posts go here</span><br><span class="line">└── themes/</span><br><span class="line">    └── Broadsheet/             # The custom theme</span><br><span class="line">        ├── _config.yml      # Theme configuration</span><br><span class="line">        ├── layout/          # EJS templates</span><br><span class="line">        ├── scripts/         # Helper functions</span><br><span class="line">        └── source/          # CSS, JS, images</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="Site-Configuration"><a href="#Site-Configuration" class="headerlink" title="Site Configuration"></a>Site Configuration</h3><p>Edit <code>_config.yml</code> in the root directory to set up your basic site information:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">Your</span> <span class="string">Blog</span> <span class="string">Title</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">Your</span> <span class="string">tagline</span> <span class="string">here</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">A</span> <span class="string">brief</span> <span class="string">description</span> <span class="string">of</span> <span class="string">your</span> <span class="string">blog</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">Your</span> <span class="string">Name</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">en</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">America/New_York</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://yourblog.com</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Theme-Configuration"><a href="#Theme-Configuration" class="headerlink" title="Theme Configuration"></a>Theme Configuration</h3><p>Customize the theme by editing <code>themes/Broadsheet/_config.yml</code>:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Theme settings</span></span><br><span class="line"><span class="attr">seo:</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Your</span> <span class="string">Blog</span> <span class="string">Title</span></span><br><span class="line">  <span class="attr">description:</span> <span class="string">Your</span> <span class="string">blog</span> <span class="string">description</span></span><br><span class="line">  <span class="attr">keywords:</span> <span class="string">blog,</span> <span class="string">writing,</span> <span class="string">thoughts</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Navigation</span></span><br><span class="line"><span class="attr">nav:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Home</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">About</span></span><br><span class="line">    <span class="attr">url:</span> <span class="string">/about</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Social links, fallback images, etc.</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Creating-Content"><a href="#Creating-Content" class="headerlink" title="Creating Content"></a>Creating Content</h2><h3 id="New-Posts"><a href="#New-Posts" class="headerlink" title="New Posts"></a>New Posts</h3><p>Create a new post with Hexo’s built-in command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx hexo new <span class="string">&quot;My First Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>This generates a new Markdown file in <code>source/_posts/</code> with basic front matter.</p>
+<h3 id="Front-Matter"><a href="#Front-Matter" class="headerlink" title="Front Matter"></a>Front Matter</h3><p>Every post needs front matter at the top:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">My</span> <span class="string">First</span> <span class="string">Post</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2026-05-01 12:00:00</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">A</span> <span class="string">short</span> <span class="string">summary</span> <span class="string">for</span> <span class="string">SEO</span> <span class="string">and</span> <span class="string">listings</span></span><br><span class="line"><span class="attr">categories:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">personal</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">thoughts</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">first-post</span></span><br><span class="line"><span class="attr">pattern:</span> <span class="string">article</span>  <span class="comment"># Choose from: article, listicle, roundup, simple, freeform</span></span><br><span class="line"><span class="attr">featured:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">hero_image:</span> <span class="string">/images/my-post.jpg</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Writing-Patterns"><a href="#Writing-Patterns" class="headerlink" title="Writing Patterns"></a>Writing Patterns</h3><p>Broadsheet supports five content patterns:</p>
+<ul>
+<li><strong>article</strong>: Multi-column layout for long-form content, with each section heading kept beside its first paragraph</li>
+<li><strong>listicle</strong>: Vertical repeated sections for rankings, checklists, guides, and itemized posts</li>
+<li><strong>roundup</strong>: Card-based collections</li>
+<li><strong>simple</strong>: Standard blog posts with layout helpers</li>
+<li><strong>freeform</strong>: Plain Markdown (default)</li>
+</ul>
+<p>Choose the pattern that best fits your content structure.</p>
+<p>A listicle entry is just a vertical section. You can number the heading or leave it unnumbered, and the content stays in the order you write it:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">&quot;listicle-entry&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>1. Item Title<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;listicle-meta&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>Optional detail<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>Entry text.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">figure</span> <span class="attr">class</span>=<span class="string">&quot;listicle-poster&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;/images/example.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Example image&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Development-Workflow"><a href="#Development-Workflow" class="headerlink" title="Development Workflow"></a>Development Workflow</h2><h3 id="Local-Development"><a href="#Local-Development" class="headerlink" title="Local Development"></a>Local Development</h3><p>Start the development server:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run server</span><br></pre></td></tr></table></figure>
+
+<p>This builds the CSS and starts Hexo locally. Visit <code>http://localhost:4000</code> to see your site.</p>
+<h3 id="CSS-Development"><a href="#CSS-Development" class="headerlink" title="CSS Development"></a>CSS Development</h3><p>Broadsheet uses Tailwind CSS. For live reloading during style development:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run watch:css</span><br></pre></td></tr></table></figure>
+
+<p>This watches <code>themes/Broadsheet/source/css/app.css</code> and rebuilds <code>generated.css</code> automatically.</p>
+<h3 id="Building-for-Production"><a href="#Building-for-Production" class="headerlink" title="Building for Production"></a>Building for Production</h3><p>Generate the static site:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<p>Output goes to the <code>public/</code> directory, ready for deployment.</p>
+<h3 id="Cleaning-Cache"><a href="#Cleaning-Cache" class="headerlink" title="Cleaning Cache"></a>Cleaning Cache</h3><p>Clear Hexo’s cache and generated files:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run clean</span><br></pre></td></tr></table></figure>
+
+<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><h3 id="Manual-Deployment"><a href="#Manual-Deployment" class="headerlink" title="Manual Deployment"></a>Manual Deployment</h3><p>After building, upload the contents of <code>public/</code> to your web server.</p>
+<h3 id="Automated-Deployment"><a href="#Automated-Deployment" class="headerlink" title="Automated Deployment"></a>Automated Deployment</h3><p>For platforms like Netlify, Vercel, or GitHub Pages, you can set up automatic builds. Most services can run <code>npm run build</code> as the build command.</p>
+<h3 id="GitHub-Pages-Example"><a href="#GitHub-Pages-Example" class="headerlink" title="GitHub Pages Example"></a>GitHub Pages Example</h3><ol>
+<li>Push your source code to GitHub</li>
+<li>Enable GitHub Pages in repository settings</li>
+<li>Set the source to “GitHub Actions”</li>
+<li>Create a workflow file <code>.github/workflows/deploy.yml</code>:</li>
+</ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">to</span> <span class="string">GitHub</span> <span class="string">Pages</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> [ <span class="string">main</span> ]</span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/setup-node@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">node-version:</span> <span class="string">&#x27;20&#x27;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npm</span> <span class="string">ci</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">run:</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">github_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="attr">publish_dir:</span> <span class="string">./public</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Advanced-Usage"><a href="#Advanced-Usage" class="headerlink" title="Advanced Usage"></a>Advanced Usage</h2><h3 id="Custom-Helpers"><a href="#Custom-Helpers" class="headerlink" title="Custom Helpers"></a>Custom Helpers</h3><p>Broadsheet provides several helper functions in <code>themes/Broadsheet/scripts/helpers.js</code>:</p>
+<ul>
+<li><code>editorial_summary(post, length)</code>: Generate summaries</li>
+<li><code>editorial_cover(post)</code>: Resolve post images</li>
+<li><code>editorial_pattern(page)</code>: Get pattern type</li>
+<li><code>editorial_body_class(page)</code>: Get CSS classes</li>
+</ul>
+<h3 id="Theme-Customization"><a href="#Theme-Customization" class="headerlink" title="Theme Customization"></a>Theme Customization</h3><p>Modify templates in <code>themes/Broadsheet/layout/</code> (EJS files), styles in <code>themes/Broadsheet/source/css/app.css</code>, or add custom scripts in <code>themes/Broadsheet/source/js/</code>.</p>
+<h3 id="SEO-and-Metadata"><a href="#SEO-and-Metadata" class="headerlink" title="SEO and Metadata"></a>SEO and Metadata</h3><p>Broadsheet automatically generates:</p>
+<ul>
+<li>Meta descriptions and keywords</li>
+<li>Open Graph and Twitter card tags</li>
+<li>Structured data (JSON-LD)</li>
+<li>Canonical URLs</li>
+</ul>
+<p>Configure SEO settings in the theme config.</p>
+<h2 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h2><h3 id="Common-Issues"><a href="#Common-Issues" class="headerlink" title="Common Issues"></a>Common Issues</h3><p><strong>CSS not updating</strong>: Run <code>npm run watch:css</code> in a separate terminal during development.</p>
+<p><strong>Posts not appearing</strong>: Check front matter dates and run <code>npm run clean</code> then rebuild.</p>
+<p><strong>Images not loading</strong>: Ensure paths are correct and files exist in <code>themes/Broadsheet/source/images/</code>.</p>
+<p><strong>Build failing</strong>: Check for syntax errors in Markdown or template files.</p>
+<h3 id="Getting-Help"><a href="#Getting-Help" class="headerlink" title="Getting Help"></a>Getting Help</h3><p>If you run into issues:</p>
+<ol>
+<li>Check the Hexo documentation: <a target="_blank" rel="noopener" href="https://hexo.io/docs/">https://hexo.io/docs/</a></li>
+<li>Review the Broadsheet README for theme-specific details</li>
+<li>Search existing issues or create a new one in the project repository</li>
+</ol>
+<h2 id="Next-Steps"><a href="#Next-Steps" class="headerlink" title="Next Steps"></a>Next Steps</h2><p>Now that you’re set up:</p>
+<ol>
+<li>Create your first post</li>
+<li>Customize the theme configuration</li>
+<li>Set up deployment</li>
+<li>Start writing!</li>
+</ol>
+<p>Broadsheet is designed to be flexible yet opinionated, giving you powerful tools while keeping the focus on your content. Happy blogging!</p>
+
+    </div>
+
+    
+
+<div class="border-t border-black px-6 py-6 sm:px-8 xl:px-10">
+  <div class="py-2">
+    <p class="text-[0.72rem] font-bold uppercase tracking-[0.15em]">At A Glance</p>
+    <dl class="mt-4 grid gap-x-8 gap-y-4 text-sm leading-6 md:grid-cols-2 xl:grid-cols-3">
+      <div class="border-t border-black pt-3">
+        <dt class="font-semibold uppercase tracking-[0.18em]">Published</dt>
+        <dd class="mt-1">25 May 2026</dd>
+      </div>
+      <div class="border-t border-black pt-3">
+        <dt class="font-semibold uppercase tracking-[0.18em]">Section</dt>
+        <dd class="mt-1">
+          <a href="/AIBlogg/pr-preview/pr-1/categories/guides/" class="capitalize transition-colors hover:text-blue-700">
+            guides
+          </a>
+        </dd>
+      </div>
+      <div class="border-t border-black pt-3">
+        <dt class="font-semibold uppercase tracking-[0.18em]">Tags</dt>
+        <dd class="mt-1">
+          
+            <div class="flex flex-wrap gap-x-3 gap-y-2">
+              
+                <a href="/AIBlogg/pr-preview/pr-1/tags/setup/" class="capitalize transition-colors hover:text-blue-700">#setup</a>
+              
+                <a href="/AIBlogg/pr-preview/pr-1/tags/hexo/" class="capitalize transition-colors hover:text-blue-700">#hexo</a>
+              
+                <a href="/AIBlogg/pr-preview/pr-1/tags/tutorial/" class="capitalize transition-colors hover:text-blue-700">#tutorial</a>
+              
+            </div>
+          
+        </dd>
+      </div>
+      <div class="border-t border-black pt-3">
+        <dt class="font-semibold uppercase tracking-[0.18em]">Author</dt>
+        <dd class="mt-1 capitalize">John Doe</dd>
+      </div>
+      
+        <div class="border-t border-black pt-3">
+          <dt class="font-semibold uppercase tracking-[0.18em]">Updated</dt>
+          <dd class="mt-1">07 Jun 2026</dd>
+        </div>
+      
+      <div class="border-t border-black pt-3">
+        <dt class="font-semibold uppercase tracking-[0.18em]">Pattern</dt>
+        <dd class="mt-1">Freeform</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+  </article>
+
+  <div class="xl:grid xl:grid-cols-3">
+    <div class="xl:col-span-3">
+      
+
+<aside class="news-reference-grid gap-6 border-t-2 border-black pt-6">
+
+  <div class="order-1 hidden p-6 md:block">
+    <p class="text-[0.72rem] font-bold uppercase tracking-[0.15em]">Recent Posts</p>
+    <div class="mt-5 space-y-4">
+      
+        <article class="border-b border-black/12 pb-4 last:border-b-0 last:pb-0">
+          <p class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-black/62">
+            26 May 2026
+          </p>
+          <h3 class="mt-2 font-serif text-xl leading-tight hover:text-blue-700">
+            <a href="/AIBlogg/pr-preview/pr-1/2026/05/26/a-new-era-of-music-is-here/">A New Era of Music Is Here</a>
+          </h3>
+        </article>
+      
+        <article class="border-b border-black/12 pb-4 last:border-b-0 last:pb-0">
+          <p class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-black/62">
+            25 May 2026
+          </p>
+          <h3 class="mt-2 font-serif text-xl leading-tight hover:text-blue-700">
+            <a href="/AIBlogg/pr-preview/pr-1/2026/05/25/getting-started-with-broadsheet/">Broadsheet Setup Guide</a>
+          </h3>
+        </article>
+      
+        <article class="border-b border-black/12 pb-4 last:border-b-0 last:pb-0">
+          <p class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-black/62">
+            24 May 2026
+          </p>
+          <h3 class="mt-2 font-serif text-xl leading-tight hover:text-blue-700">
+            <a href="/AIBlogg/pr-preview/pr-1/2026/05/24/understanding-broadsheet-blog-patterns/">Broadsheet Pattern Guide</a>
+          </h3>
+        </article>
+      
+        <article class="border-b border-black/12 pb-4 last:border-b-0 last:pb-0">
+          <p class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-black/62">
+            23 May 2026
+          </p>
+          <h3 class="mt-2 font-serif text-xl leading-tight hover:text-blue-700">
+            <a href="/AIBlogg/pr-preview/pr-1/2026/05/23/two-wheels-over-four/">Two Wheels Over Four</a>
+          </h3>
+        </article>
+      
+        <article class="border-b border-black/12 pb-4 last:border-b-0 last:pb-0">
+          <p class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-black/62">
+            22 May 2026
+          </p>
+          <h3 class="mt-2 font-serif text-xl leading-tight hover:text-blue-700">
+            <a href="/AIBlogg/pr-preview/pr-1/2026/05/22/three-building-styles-in-concrete-and-stone/">Three Buildings</a>
+          </h3>
+        </article>
+      
+    </div>
+  </div>
+
+  <div class="order-2 grid gap-6">
+    
+      <div class="p-6">
+        <p class="text-[0.72rem] font-bold uppercase tracking-[0.15em]">Sections</p>
+        <div class="mt-5 space-y-3">
+          
+            <a href="/AIBlogg/pr-preview/pr-1/categories/features/" class="flex items-center justify-between border border-black px-4 py-3 text-sm uppercase tracking-[0.18em] hover:text-white hover:bg-black transition-colors">
+              <span>features</span>
+              <span>3</span>
+            </a>
+          
+            <a href="/AIBlogg/pr-preview/pr-1/categories/guides/" class="flex items-center justify-between border border-black px-4 py-3 text-sm uppercase tracking-[0.18em] hover:text-white hover:bg-black transition-colors">
+              <span>guides</span>
+              <span>2</span>
+            </a>
+          
+            <a href="/AIBlogg/pr-preview/pr-1/categories/notes/" class="flex items-center justify-between border border-black px-4 py-3 text-sm uppercase tracking-[0.18em] hover:text-white hover:bg-black transition-colors">
+              <span>notes</span>
+              <span>1</span>
+            </a>
+          
+        </div>
+      </div>
+    
+
+    
+      <div class="p-6">
+        <p class="text-[0.72rem] font-bold uppercase tracking-[0.15em]">Tags</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          
+            <a
+              href="/AIBlogg/pr-preview/pr-1/tags/insects/"
+              class="border border-black px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.22em] hover:text-white hover:bg-black transition-colors"
+            >insects</a>
+          
+            <a
+              href="/AIBlogg/pr-preview/pr-1/tags/illustration/"
+              class="border border-black px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.22em] hover:text-white hover:bg-black transition-colors"
+            >illustration</a>
+          
+            <a
+              href="/AIBlogg/pr-preview/pr-1/tags/archive/"
+              class="border border-black px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.22em] hover:text-white hover:bg-black transition-colors"
+            >archive</a>
+          
+            <a
+              href="/AIBlogg/pr-preview/pr-1/tags/setup/"
+              class="border border-black px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.22em] hover:text-white hover:bg-black transition-colors"
+            >setup</a>
+          
+            <a
+              href="/AIBlogg/pr-preview/pr-1/tags/hexo/"
+              class="border border-black px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.22em] hover:text-white hover:bg-black transition-colors"
+            >hexo</a>
+          
+            <a
+              href="/AIBlogg/pr-preview/pr-1/tags/tutorial/"
+              class="border border-black px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.22em] hover:text-white hover:bg-black transition-colors"
+            >tutorial</a>
+          
+            <a
+              href="/AIBlogg/pr-preview/pr-1/tags/music/"
+              class="border border-black px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.22em] hover:text-white hover:bg-black transition-colors"
+            >music</a>
+          
+            <a
+              href="/AIBlogg/pr-preview/pr-1/tags/culture/"
+              class="border border-black px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.22em] hover:text-white hover:bg-black transition-colors"
+            >culture</a>
+          
+        </div>
+      </div>
+    
+  </div>
+
+  <div class="order-3 hidden gap-6 py-6 xl:grid">
+    <div class="bg-black p-6 text-paper">
+      <p class="text-[0.72rem] font-bold uppercase tracking-[0.15em] text-paper/80">About This Journal</p>
+      <h2 class="font-serif text-3xl leading-tight">Demo for a blog site.</h2>
+      <p class="mt-4 text-sm leading-7 text-paper/85">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      
+        <a
+          href="/AIBlogg/pr-preview/pr-1/archives/"
+          class="mt-6 inline-flex border border-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] hover:text-black hover:bg-white transition-colors"
+        >Browse the archive</a>
+      
+    </div>
+
+    <div class="hidden p-6 md:block border-y border-black/50">
+      <p class="text-[0.72rem] font-bold uppercase tracking-[0.15em]">Editorial Note</p>
+      <h2 class="mt-3 font-serif text-2xl leading-tight">Why it feels different</h2>
+      <p class="mt-4 text-sm leading-7">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.
+      </p>
+    </div>
+  </div>
+</aside>
+
+    </div>
+  </div>
+</section>
+
+    </main>
+    
+
+<footer class="border-t border-white bg-black text-white">
+  <div class="mx-auto w-full px-4 py-10 sm:px-6 lg:px-10 xl:px-12">
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.8fr)_minmax(18rem,0.7fr)] lg:items-start">
+      <div>
+        <h2 class="mt-4 font-serif text-3xl sm:text-4xl" style="font-family: 'Manufacturing Consent', Georgia, serif;">Broadsheet</h2>
+        <p class="mt-4 max-w-2xl text-base leading-7 text-white/76">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+
+      <div>
+        <div class="mt-4 grid gap-3 text-left">
+          <a href="#" class="text-sm font-sans tracking-[0.22em] text-white/76 transition-colors hover:text-white">Terms of Service</a>
+          <a href="#" class="text-sm font-sans tracking-[0.22em] text-white/76 transition-colors hover:text-white">About Us</a>
+          <a href="#" class="text-sm font-sans tracking-[0.22em] text-white/76 transition-colors hover:text-white">Contact Us</a>
+          <a href="#" class="text-sm font-sans tracking-[0.22em] text-white/76 transition-colors hover:text-white">Privacy Policy</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="mt-2 flex items-center gap-3">
+          <a href="#" class="inline-flex h-9 w-9 items-center justify-center text-white/76 transition-colors hover:border-white hover:text-white" aria-label="X">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path d="M14.2 10.2 22.6 0h-2l-7.3 8.8L7.5 0H.8l8.8 13L.8 24h2l7.7-9.3 6.2 9.3h6.7l-9.2-13.8Zm-2.7 3.2-.9-1.3L3.5 1.5h3.1l5.7 8.4.9 1.3 7.5 11.2h-3.1l-6.1-9Z"/>
+            </svg>
+          </a>
+          <a href="#" class="inline-flex h-9 w-9 items-center justify-center text-white/76 transition-colors hover:border-white hover:text-white" aria-label="Instagram">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+              <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" class="inline-flex h-9 w-9 items-center justify-center text-white/76 transition-colors hover:border-white hover:text-white" aria-label="GitHub">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path fill-rule="evenodd" d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.2 1.9 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+        </div>
+
+        <form class="mt-4 grid gap-3" action="#" onsubmit="return false;">
+          <label for="footer-newsletter-email" class="sr-only">Email address</label>
+          <input id="footer-newsletter-email" type="email" placeholder="Email address" class="border border-white/40 bg-transparent px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none transition-colors focus:border-white">
+          <button type="submit" class="border cursor-pointer bg-white px-4 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-black transition-colors hover:bg-black hover:text-white">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-8 border-t border-white pt-4 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-white/62">
+      <span>&copy; 2026 Broadsheet</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  
+<script src="/AIBlogg/pr-preview/pr-1/js/flowbite.min.js"></script>
+
+  
+<script src="/AIBlogg/pr-preview/pr-1/js/app.js"></script>
+
+</body>
+</html>
