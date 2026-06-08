@@ -1,6 +1,6 @@
 name: AI Blog Writer
 
-# This allows you to manually trigger the workflow from the GitHub UI
+# Manually trigger
 on:
   workflow_dispatch:
     inputs:
@@ -13,7 +13,16 @@ on:
         description: 'Your rough draft, notes, or brain dump'
         required: true
         type: string
-
+      images:
+        description: 'Comma-separated list of image URLs to include in the post (Optional)'
+        required: false
+        default: ''
+        type: string
+      references:
+        description: 'Comma-separated list of reference URLs to inform the AI (Optional)'
+        required: false
+        default: ''
+        type: string
 permissions:
   contents: write
   pull-requests: write
@@ -42,6 +51,8 @@ jobs:
           # Injects the text you typed into the UI
           INPUT_TITLE: ${{ inputs.title }}
           INPUT_CONTENT: ${{ inputs.content }}
+          INPUT_IMAGES: ${{ inputs.images }}
+          INPUT_REFERENCES: ${{ inputs.references }}
         run: node generate.js
 
       - name: Read Generated Post Metadata

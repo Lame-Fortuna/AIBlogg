@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Broadsheet
-subtitle: Lorem ipsum dolor sit amet
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-keywords: demo, blog, hexo
-author: John Doe
+title: AI Blogger
+subtitle: AI-assisted Hexo publishing
+description: A generic Hexo blog template with AI-generated draft pull requests.
+keywords: hexo, blog, ai, github actions
+author: Your Name
 language: en
 timezone: ''
 
@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: broadsheet
+theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

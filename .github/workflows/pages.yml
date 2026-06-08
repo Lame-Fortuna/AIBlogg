@@ -45,7 +45,7 @@ jobs:
           printf "url: %s\nroot: %s\n" "$SITE_URL" "$SITE_ROOT" > _config.github-pages.yml
 
       - name: Build Hexo Site
-        run: npm run build:css && npx hexo generate --config _config.yml,_config.github-pages.yml
+        run: npx hexo generate --config _config.yml,_config.github-pages.yml
 
       - name: Deploy To GitHub Pages Branch
         uses: JamesIves/github-pages-deploy-action@v4

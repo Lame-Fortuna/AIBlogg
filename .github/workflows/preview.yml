@@ -53,7 +53,7 @@ jobs:
 
       - name: Build Hexo Site
         if: github.event.action != 'closed'
-        run: npm run build:css && npx hexo generate --config _config.yml,_config.github-pages.yml
+        run: npx hexo generate --config _config.yml,_config.github-pages.yml
 
       # This action takes the 'public' folder and deploys it to a special gh-pages preview branch
       # It also automatically comments on your PR with the temporary URL

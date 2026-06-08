@@ -5,7 +5,7 @@ const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const MODEL_NAME = process.env.OPENROUTER_MODEL || 'openai/gpt-oss-120b:free';
 
 const PATTERN_DOCS = {
-  article: `Use for longer reviews, essays, and reported pieces. Author mostly in Markdown. Use opening paragraphs followed by ##, ###, or #### section headings. The theme will wrap sections and keep each heading with its first paragraph. Do not add custom wrappers for normal prose.`,
+  article: `Use for longer reviews, essays, and reported pieces. Author mostly in Markdown. Use opening paragraphs followed by ##, ###, or #### section headings. Do not add custom wrappers for normal prose.`,
   listicle: `Use for rankings, checklists, guides, or long item-by-item features. Every entry must use:
 <section class="listicle-entry">
   <div>
@@ -14,10 +14,10 @@ const PATTERN_DOCS = {
     <p>First paragraph.</p>
   </div>
 </section>
-Entries may include lists, code snippets, paragraphs, and figures when the source content calls for them.`,
+Entries may include lists, code snippets, paragraphs, and figures when the source content calls for them. In plain Hexo themes these classes are harmless; custom themes can style them.`,
   roundup: `Use for grouped short features or compact collections. Wrap all cards in one <div class="roundup-grid">. Every item must use <section class="roundup-card">...</section>. Cards can contain h2, paragraphs, and images when the source content calls for them.`,
-  simple: `Use for standard posts with a little structure control. Use ordinary Markdown where possible. For side-by-side sections, use <section class="simple-split"> with a text <div> and optional <figure>. For a reversed split, use <section class="simple-split reverse"> and put media first, text second.`,
-  freeform: `Use ordinary Markdown with shared page framing and metadata. No special HTML wrappers are required.`
+  simple: `Use for standard posts with a little structure control. Use ordinary Markdown where possible. For side-by-side sections, use <section class="simple-split"> with a text <div> and optional <figure>. For a reversed split, use <section class="simple-split reverse"> and put media first, text second. In plain Hexo themes these classes are harmless; custom themes can style them.`,
+  freeform: `Use ordinary Markdown. No special HTML wrappers are required.`
 };
 
 function yamlString(value) {
@@ -110,7 +110,7 @@ async function buildHexoPost() {
     console.log(`Starting AI pipeline for: "${rawTitle}"`);
 
     console.log('Step 1: Triaging pattern...');
-    const triageSystem = `You are a strict classifier for the Broadsheet Hexo theme.
+    const triageSystem = `You are a strict classifier for a Hexo blog post.
 Choose exactly one pattern:
 - article: longer reviews, essays, reported pieces, long-form prose
 - listicle: rankings, checklists, guides, item-by-item features
@@ -126,7 +126,7 @@ Respond with only the pattern word in lowercase.`;
     console.log(`-> Selected Pattern: ${pattern}`);
 
     console.log('Step 2: Expanding content and generating metadata...');
-    const seoSystem = `You are an expert editor preparing content for the Broadsheet Hexo demo theme.
+    const seoSystem = `You are an expert editor preparing content for a Hexo blog.
 Expand the rough draft into a readable blog post and return this exact shape:
 Title: [max 60 chars]
 Description: [max 160 chars, one sentence, no line breaks]
@@ -156,10 +156,10 @@ Do not invent factual claims beyond the rough draft unless they are generic conn
     const baseContent = contentMatch ? contentMatch[1].trim() : expandedData.trim();
 
     console.log('Step 3: Structuring final markup...');
-    const structureSystem = `You are formatting a post for the Broadsheet Hexo theme.
+    const structureSystem = `You are formatting a post for Hexo.
 Selected pattern: ${pattern}
 
-Theme rules:
+Pattern rules:
 ${PATTERN_DOCS[pattern]}
 
 Global rules:
@@ -169,7 +169,7 @@ Global rules:
 - Do not use placeholder image paths such as /images/example.jpg.
 - Keep raw HTML valid and balanced.
 - For article and freeform, prefer Markdown headings and paragraphs.
-- For listicle, roundup, and simple, use the exact helper classes from the theme contract.`;
+- For listicle, roundup, and simple, use the helper classes exactly as documented above so custom themes can style them. Plain Hexo themes should still render readable content without those styles.`;
 
     let finalBody = await askOpenRouter(structureSystem, baseContent);
     finalBody = finalBody.trim().replace(/^```(?:html|markdown|md)?\s*/i, '').replace(/\s*```$/i, '').trim();
